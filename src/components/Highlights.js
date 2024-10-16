@@ -7,7 +7,7 @@ const Highlights = () => {
   return (
     <section className="highlight_section _max_width_center">
       <header className="_flex_box">
-        <h2 className="highlight_title">Specials</h2>
+        <h2 className="highlight_title">This Weeks Specials!!</h2>
         <div>
           <button
             className="highlight_btn _BTN_"

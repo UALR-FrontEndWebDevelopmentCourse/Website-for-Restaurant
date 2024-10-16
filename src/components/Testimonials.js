@@ -22,7 +22,6 @@ const Testimonial = ({ id, name, midImg, review }) => {
         <img
           loading="lazy"
           src={midImg}
-          alt={name}
           className="testi_img_el_img"
         />
         <figcaption className="testi_img_caption">
