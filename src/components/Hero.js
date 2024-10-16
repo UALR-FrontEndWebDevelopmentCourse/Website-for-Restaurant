@@ -18,7 +18,7 @@ const Hero = () => {
                 <ReactTyped
                   strings={["Little Lemon"]}
                   typeSpeed={100}
-                  cursorChar={"_"}
+                  cursorChar={"."}
                 />
               </h1>
               <p className="hero_text_header_p">Chicago</p>
