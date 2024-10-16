@@ -61,7 +61,7 @@ const SingleComponent = () => {
               <div className="single_component_content_details">
                 <div>
                   <p>Name: {title}</p>
-                  <p>$ {price} for one</p>
+                  <p>$ {price} Per Dish</p>
                 </div>
                 <div>
                   <p>
@@ -95,7 +95,7 @@ const SingleComponent = () => {
           <div className="single_component_content_details">
             <div>
               <p>Name: {title}</p>
-              <p>$ {price} for one</p>
+              <p>$ {price} Per Dish</p>
             </div>
             <div>
               <p>

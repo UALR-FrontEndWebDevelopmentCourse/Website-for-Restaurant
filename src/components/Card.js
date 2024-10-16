@@ -75,7 +75,7 @@ const Card = ({ id, midImg, heading, price, description }) => {
           >
             {heading}
           </h3>
-          <span className="specials_card_price">₹ {price}</span>
+          <span className="specials_card_price">$ {price}</span>
         </header>
 
         <p className="specials_card_desc">

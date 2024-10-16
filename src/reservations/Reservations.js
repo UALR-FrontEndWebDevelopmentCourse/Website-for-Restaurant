@@ -21,8 +21,6 @@ const Reservations = () => {
     little_Lemon_background,
   } = reservationCss;
 
-  /* Form 1 */
-
   const [reservationDetails, setReservationsDetails] = useState({
     "indoor-outdoor": "indoor",
     date: "",
@@ -37,8 +35,6 @@ const Reservations = () => {
       [e.target.name]: e.target.value,
     });
   };
-
-  /* Form 2  state*/
 
   const [details, setDetails] = useState({
     firstName: "",
@@ -151,7 +147,6 @@ const Reservations = () => {
 
   return (
     <section className={main_reservations_container} style={{minHeight:`calc(100vh - ${navbarHeight + footerHeight}px)`}}>
-      {/* {confirmFlag && <ConfirmCard />} */}
       
       {confirmFlag && (
         <section

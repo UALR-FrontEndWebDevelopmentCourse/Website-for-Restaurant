@@ -68,8 +68,6 @@
   padding: 1rem 4rem;
 }
 
-/* Form1 */
-
 .reservation {
   position: relative;
   height: 100%;
@@ -186,8 +184,6 @@
 select option {
   font-size: 2.5rem;
 }
-
-/* Form 2 */
 
 .form_2_container {
   position: relative;
@@ -320,8 +316,6 @@ select option {
   transform: translateY(4px);
 }
 
-/* CofirmCard */
-
 .confirm_card {
   width: clamp(200px, 90%, 700px);
   height: 250px;
@@ -380,8 +374,6 @@ select option {
   .reservation_form_img_container figure img {
     width: 100%;
   }
-
-  /* !Form2 */
   .form_2_container_form {
     grid-column-gap: 5rem;
   }
@@ -400,8 +392,6 @@ select option {
     grid-template-rows: 200px;
   }
 
-  /* Form 1 */
-
   .reservation form {
     gap: 2.5rem 4rem;
   }
@@ -409,8 +399,6 @@ select option {
   .absolute_class {
     padding: 0.5rem 1.5rem;
   }
-
-  /* !Form2 */
 
   .form_2_container_form {
     grid-column-gap: 3rem;
@@ -477,8 +465,6 @@ select option {
     height: 105px;
   }
 
-  /* Form1 */
-
   .reservation {
     padding-bottom: 1.5rem;
   }
@@ -526,8 +512,6 @@ select option {
     font-size: 1.5rem;
     padding: 0 0.5rem;
   }
-
-  /* ? Form2 */
 
   .form_2_container_form {
     grid-template-columns: 1fr;

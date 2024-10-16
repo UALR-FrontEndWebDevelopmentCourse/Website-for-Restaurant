@@ -41,14 +41,14 @@ const Form2 = ({
     <section className={`${form_2_container} _max_width_center`}>
       <form className={form_2_container_form}>
         <div className="firstName">
-          <label htmlFor="firstName">FirstName</label>
+          <label htmlFor="firstName">First Name</label>
 
           <input
             type="text"
             id="firstName"
             name="firstName"
             value={firstName}
-            placeholder="FirstName"
+            placeholder="First Name"
             onChange={handleChange}
             required
             style={formErrors.firstName ? { border: "2px solid orange" } : {}}
@@ -59,14 +59,14 @@ const Form2 = ({
         </div>
 
         <div className="lastName">
-          <label htmlFor="lastName">LastName</label>
+          <label htmlFor="lastName">Last Name</label>
 
           <input
             type="text"
             id="lastName"
             name="lastName"
             value={lastName}
-            placeholder="LastName"
+            placeholder="Last Name"
             onChange={handleChange}
             required
             style={formErrors.lastName ? { border: "2px solid orange" } : {}}
@@ -82,7 +82,7 @@ const Form2 = ({
             id="email"
             name="email"
             value={email}
-            placeholder="Email"
+            placeholder="you@company.com"
             onChange={handleChange}
             required
             style={formErrors.email ? { border: "2px solid orange" } : {}}
@@ -91,14 +91,14 @@ const Form2 = ({
         </div>
 
         <div className="phoneNumber">
-          <label htmlFor="phoneNumber">PhoneNumber</label>
+          <label htmlFor="phoneNumber">Phone Number</label>
 
           <input
             type="text"
             id="phoneNumber"
             name="phoneNumber"
             value={phoneNumber}
-            placeholder="No -"
+            placeholder="US"
             onChange={handleChange}
             required
             style={formErrors.phoneNumber ? { border: "2px solid orange" } : {}}
@@ -162,7 +162,7 @@ const Form2 = ({
                 <div className={orange_color}>
                   <i className={fontAwesomeIcons.occasion}></i>
 
-                  <span>occasion</span>
+                  <span>Occasion</span>
                 </div>
               )}
             </div>
@@ -190,7 +190,7 @@ const Form2 = ({
         </div>
 
         <div className={specialRequest_class}>
-          <label htmlFor="specialRequest">specialRequest</label>
+          <label htmlFor="specialRequest">Special Requests</label>
 
           <textarea
             name="specialRequest"

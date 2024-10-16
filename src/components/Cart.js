@@ -43,7 +43,6 @@ const Cart = () => {
       <Footer grandtot={grandtot} />
       <CancelationPolicy />
       <>
-        <ShowDiscountComponent />
         <PlaceOrderConfirmComponent />
       </>
     </main>
@@ -60,11 +59,10 @@ const NoItems = () => {
           <span>
             <i className="fa-solid fa-cart-plus"></i>
           </span>
-          <h2>empty cart</h2>
+          <h2>No Order Found... So far</h2>
         </div>
         <p>
-          go to <Link to={"/orderonline"}> order online </Link> page to add
-          Items
+          Please visit our <Link to={"/orderonline"}> Menu </Link> to Order Online, and your options will appear here!
         </p>
       </div>
     </>
@@ -105,7 +103,7 @@ const CartArticle = ({ list, addItems, deleteItems }) => {
               </div>
             </section>
             <section className="cart_section_2">
-              <h3>₹ {item.price}</h3>
+              <h3>$ {item.price}</h3>
             </section>
           </article>
         );
@@ -131,10 +129,9 @@ const Footer1 = () => {
     <>
       <div className="cart_footer_1">
         <div className="cart_footer_1_discount_card_container">
-          <CouponCard />
           <div className="cart_place_order_btn_container" onClick={handleOrder}>
             <button className="cart_place_order_btn">
-              Place Order {itemsCount} {itemsCount > 1 ? "items" : "item"}
+              Place Order {itemsCount} {itemsCount > 1 ? "Items" : "item"}
             </button>
           </div>
         </div>
@@ -143,29 +140,6 @@ const Footer1 = () => {
   );
 };
 
-const CouponCard = () => {
-  const { handlediscount, removeDiscountFlag, handleRemovediscount } =
-    useScreenSize();
-  return (
-    <>
-      <article className="cart_footer_1_card">
-        <div className="cart_footer_1_text">
-          <h3>Save @ 50% off With Dinner Deal 20</h3>
-        </div>
-        <div className="cart_footer_1_btn">
-          {removeDiscountFlag ? (
-            <button onClick={handleRemovediscount}>Remove</button>
-          ) : (
-            <button onClick={handlediscount}>Apply</button>
-          )}
-        </div>
-        <p className="cart_footer_1_coupon_view_para">
-          View all restaurant coupons
-        </p>
-      </article>
-    </>
-  );
-};
 
 const Footer2 = ({ grandtot }) => {
   const { tip, totalPrice, minusTip, addTip } = useScreenSize();
@@ -180,15 +154,15 @@ const Footer2 = ({ grandtot }) => {
             <h3>{totalPrice}</h3>
           </div>
           <div>
-            <h3>delivery charges :</h3>
-            <h3>25/-</h3>
+            <h3>Online Order Fee:</h3>
+            <h3>5</h3>
           </div>
           <div>
-            <h3>GST 5%</h3>
+            <h3>Tax 3%</h3>
             <h3>{((5 / 100) * totalPrice).toFixed(2)}</h3>
           </div>
           <div className="cart_add_tip_div">
-            <h3>Add Tip :</h3>
+            <h3>Tip:</h3>
             <h3 className="cart_add_tip_h3">
               <span className="cart_tip_btn_container">
                 <button onClick={minusTip}>-</button>
@@ -196,27 +170,12 @@ const Footer2 = ({ grandtot }) => {
                 <button onClick={addTip}>+</button>
               </span>
             </h3>
-            {/* <h3 className="cart_add_tip_h3">
-              <span className="cart_tip_span">{tip}</span>
-              <span
-                className="cart_tip_btn_container"
-                // style={{
-                //   left: tip < 10 ? "-4rem" : tip < 100 ? "-3.5rem" : "-3.1rem",
-                // }}
-                // style={{
-                //   left: tip < 10 ? "-4rem" : tip < 100 ? "-3.5rem" : "-3.1rem",
-                // }}
-              >
-                <button onClick={minusTip}>-</button>
-                <button onClick={addTip}>+</button>
-              </span>
-            </h3> */}
           </div>
         </div>
         <section className="cart_footer_grand_total">
           <h2>Order Total: </h2>
           <h2>
-            <span className="rupees">₹</span>
+            <span className="dollars">$</span>
             {grandtot}
           </h2>
         </section>
@@ -232,43 +191,9 @@ const CancelationPolicy = () => {
         <div className="cancelation_policy_content">
           <h4>CANCELLATION POLICY</h4>
           <p>
-            Help us reduce food waste by avodiding cancellations after placing
-            your order. A 100% cancellation fee will be applied
+            Please help us in reducing food waste by avodiding cancellations after placing
+            your order. A 100% cancellation fee will be applied!!
           </p>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const ShowDiscountComponent = () => {
-  const { discountFlag, handlediscountFlag, getDiscount } = useScreenSize();
-  return (
-    <>
-      <div
-        onClick={handlediscountFlag}
-        className={
-          discountFlag ? "show_discount show_discount_comp" : "show_discount"
-        }
-      >
-        <div className="show_discount_content_container">
-          <h1>Coupon Applied</h1>
-          <h2>
-            {" "}
-            &#127873; You saved{" "}
-            <span className="saved_rupees">
-              {" "}
-              <span className="rupees">₹</span>
-              {getDiscount}
-            </span>{" "}
-            rupees
-          </h2>
-          <span
-            onClick={handlediscountFlag}
-            className="show_discount_close_btn"
-          >
-            <i className="fa-solid fa-xmark"></i>
-          </span>
         </div>
       </div>
     </>
@@ -317,18 +242,18 @@ const PlaceOrderConfirmComponent = () => {
             <OrderConfirmed />
           ) : (
             <>
-              <h1>Are You Sure Confirm Order ?</h1>
+              <h1>Confirm Order?</h1>
 
               <div className="place_order_confirm_btn_container">
-                <button onClick={handleOk}>Ok</button>
-                <button onClick={handleOrderToFalse}>Cancel</button>
+                <button onClick={handleOk}>Yes</button>
+                <button onClick={handleOrderToFalse}>No</button>
               </div>
             </>
           )}
           <span className="place_order_close_btn" onClick={handleOrderToFalse}>
             <i className="fa-solid fa-xmark"></i>
           </span>
-          {/*  */}
+          {}
         </div>
       </div>
     </>
@@ -341,14 +266,14 @@ const OrderConfirmed = () => {
     <section className="order_confirmed">
       <h2>
         {" "}
-        <MdFastfood /> Your order has been confirmed ThankYou!
+        <MdFastfood /> Your order has been confirmed, Thanks!
       </h2>
-      <h1>Your food will be deliverd in {time} min </h1>
+      <h1>Your food will be ready in {time} minutes </h1>
 
       <div className="order_text_animation_container">
         <div>&#128523;</div>
         <div>
-          <span>Delicious moments</span>
+          <span>Delicious</span>
         </div>
       </div>
     </section>

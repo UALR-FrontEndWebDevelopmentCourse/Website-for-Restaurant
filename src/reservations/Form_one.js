@@ -5,8 +5,6 @@ import reservationCss from "./reservations.module.css";
 import { options } from "../utils/data";
 
 const Form1 = ({ handleChange, reservationDetails }) => {
-  /* Importing CSS */
-
   const {
     reservation,
     reservation_heading,
@@ -29,7 +27,7 @@ const Form1 = ({ handleChange, reservationDetails }) => {
 
       <form>
         <section className={indoor}>
-          <label htmlFor="indoor">Indoor seating</label>
+          <label htmlFor="indoor">Indoor Seating</label>
           <input
             type="radio"
             id="indoor"
@@ -50,7 +48,7 @@ const Form1 = ({ handleChange, reservationDetails }) => {
         </div>
 
         <section className={date_class}>
-          <label htmlFor="date">select date</label>
+          <label htmlFor="date">Select Date</label>
 
           <div
             className={
@@ -113,7 +111,7 @@ const Form1 = ({ handleChange, reservationDetails }) => {
             ) : (
               <SelelctInputDetails
                 className={fontAwesomeIcons.user}
-                text={"No of Diners"}
+                text={"No. of Diners"}
               />
             )}
           </div>
@@ -192,7 +190,6 @@ const Form1 = ({ handleChange, reservationDetails }) => {
             )}
           </div>
         </section>
-        {/* <button type="submit">Submit</button> */}
       </form>
     </section>
   );

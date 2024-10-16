@@ -34,12 +34,6 @@ const Order = () => {
         .sort((a, b) => b.id - a.id);
       setFoodList(filterdList);
     }
-
-    if (type === "shakes") {
-      setBool("shakes");
-      filterdList = fooditems.filter((item) => item.type === "shake");
-      setFoodList(filterdList);
-    }
   };
 
   const buttons = [
@@ -47,7 +41,6 @@ const Order = () => {
     { id: 2, type: "breakfast" },
     { id: 3, type: "lunch" },
     { id: 4, type: "dinner" },
-    { id: 5, type: "shakes" },
   ];
 
   useEffect(() => {

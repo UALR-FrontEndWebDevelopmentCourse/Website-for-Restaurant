@@ -20,31 +20,6 @@ const FoodItem = ({ id, title, minImg, midImg, type, rating, price }) => {
     }
   }, [id, groupedItems]);
 
-  // useEffect(() => {
-  //   try {
-  //     const observer = new IntersectionObserver((entries, obs) => {
-  //       console.log(typeof entries);
-
-  //       for (const entry of entries) {
-  //         if (entry.isIntersecting) {
-  //           setInView(true);
-  //           obs.disconnect()
-  //         }
-  //       }
-  //     }, {})
-  //    if(placeholderRef.current) {
-
-  //      observer.observe(placeholderRef.current)
-  //    }
-
-  //     return () => {
-  //       observer.disconnect();
-  //     };
-  //   } catch (error) {
-  //     console.error("Error in IntersectionObserver:", error);
-  //   }
-  // }, []);
-
   useEffect(() => {
     let timeoutId;
     const observer = new IntersectionObserver((entries, obs) => {
@@ -71,9 +46,7 @@ const FoodItem = ({ id, title, minImg, midImg, type, rating, price }) => {
       <article className="order_online_card_main">
         <div className="order_online_card_content">
           {inView ? (
-            <Link to={`/orderonline/${id}`}>
               <img src={midImg} alt="lemon" />
-            </Link>
           ) : (
             <div
               className="image-wrapper shine order_online_image-wrapper"
@@ -88,9 +61,9 @@ const FoodItem = ({ id, title, minImg, midImg, type, rating, price }) => {
           )}
 
           <div className="order_online_item_rating_container">
-            <Link to={`/orderonline/${id}`}>
+            
               <h3>{title}</h3>
-            </Link>
+            
             <p>
               {rating}{" "}
               <span className="order_online_rating_i">
@@ -104,21 +77,21 @@ const FoodItem = ({ id, title, minImg, midImg, type, rating, price }) => {
             <div className="order_online_card_item_type">
               <p>
                 <ReactTyped
-                  strings={["item type", type]}
+                  strings={["Mmmm", type]}
                   typeSpeed={100}
                   backSpeed={50}
                   backDelay={4000 - type.length * 100}
-                  cursorChar="_"
+                  cursorChar="."
                   loop
                 />
               </p>
             </div>
             <div className="order_online_last_container">
               <p className="order_online_item_price">
-                ₹ {price} {screenWidth < 400 && itemCount > 0 ? "" : "for one"}
+                $ {price} {screenWidth < 400 && itemCount > 0 ? "" : "Per Dish"}
               </p>
 
-              {/* {itemCount > 0 && screenWidth >= 500 ? ( */}
+              {}
               {itemCount > 0 && true ? (
                 <div className="order_online_add_remove_btn">
                   <button

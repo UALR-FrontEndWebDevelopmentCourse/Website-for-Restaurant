@@ -6,7 +6,6 @@ export const getCurrentDate = () => {
   let month = today.getMonth() + 1;
   let day = today.getDate();
 
-  // Add leading zero if month or day is single digit
   month = month < 10 ? `0${month}` : month;
   day = day < 10 ? `0${day}` : day;
 

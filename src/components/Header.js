@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useScreenSize } from "../customHooks/ScreenSizeContext";
 import { NavLink } from "react-router-dom";
-import { NavLogo } from "../utils";
 import { navData } from "../utils/data";
 const Header = () => {
   const { screenSize, setNavbarHeight } = useScreenSize();
@@ -18,13 +17,10 @@ const Header = () => {
       }
     };
 
-    // Initial call on mount
     handleResize();
 
-    // Event listener for window resize
     window.addEventListener("resize", handleResize);
 
-    // Clean up event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -48,7 +44,7 @@ const Header = () => {
           <figure className="main_nav_logo">
             <img
               loading="lazy"
-              src={NavLogo}
+              
               alt="Restaurant Logo"
               className="main_nav_logo_img"
             />
